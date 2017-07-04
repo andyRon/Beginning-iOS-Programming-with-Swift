@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw6-Od-UoW">
-                                <rect key="frame" x="147.5" y="318.5" width="80" height="30"/>
+                                <rect key="frame" x="147.5" y="318" width="80" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Hello World"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Auto Layout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De5-xg-wQL">
-                                <rect key="frame" x="172" y="626" width="187" height="21"/>
+                                <rect key="frame" x="152" y="626" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zw6-Od-UoW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2jD-a2-aeV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="De5-xg-wQL" secondAttribute="trailing" id="CNE-or-R91"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="De5-xg-wQL" secondAttribute="trailing" constant="20" id="CNE-or-R91"/>
                             <constraint firstItem="zw6-Od-UoW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LDZ-uM-LP0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="De5-xg-wQL" secondAttribute="bottom" constant="20" id="SXz-1Y-iF7"/>
                         </constraints>
