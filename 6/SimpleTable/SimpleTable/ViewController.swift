@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantNames.count
     }
@@ -33,9 +33,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
                                                      for: indexPath)
         // Configure the cell...
-        cell.textLabel?.text = restaurantNames[indexPath.row]
+        let restaurantName = restaurantNames[indexPath.row]
+        cell.textLabel?.text = restaurantName
+        
+        let imageName = restaurantName.lowercased().replacingOccurrences(of: " ", with: "")
+        if let image = UIImage(named: imageName) {
+            cell.imageView?.image = image
+        } else {
+            cell.imageView?.image = UIImage(named: "restaurant")
+        }
+        
         return cell
             
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }
 
