@@ -13,6 +13,7 @@
 		EF1CD5FB1F13028A000E8EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1CD5F91F13028A000E8EFD /* LaunchScreen.storyboard */; };
 		EF1CD6031F13034C000E8EFD /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1CD6021F13034C000E8EFD /* RestaurantTableViewController.swift */; };
 		EF1CD6051F1313CD000E8EFD /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1CD6041F1313CD000E8EFD /* RestaurantTableViewCell.swift */; };
+		EF76DFC81F1C6F490036537E /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF76DFC71F1C6F490036537E /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EF1CD5FC1F13028A000E8EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1CD6021F13034C000E8EFD /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		EF1CD6041F1313CD000E8EFD /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		EF76DFC71F1C6F490036537E /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EF1CD5FC1F13028A000E8EFD /* Info.plist */,
 				EF1CD6021F13034C000E8EFD /* RestaurantTableViewController.swift */,
 				EF1CD6041F1313CD000E8EFD /* RestaurantTableViewCell.swift */,
+				EF76DFC71F1C6F490036537E /* RestaurantDetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				EF1CD6031F13034C000E8EFD /* RestaurantTableViewController.swift in Sources */,
 				EF1CD6051F1313CD000E8EFD /* RestaurantTableViewCell.swift in Sources */,
+				EF76DFC81F1C6F490036537E /* RestaurantDetailViewController.swift in Sources */,
 				EF1CD5F11F13028A000E8EFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +310,7 @@
 				EF1CD6011F13028A000E8EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
