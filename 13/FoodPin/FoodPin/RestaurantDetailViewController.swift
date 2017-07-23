@@ -31,6 +31,7 @@ UITableViewDelegate {
         
         title = restaurant.name
         
+        // 设置预估行高estimatedRowHeight,达到cell高度的自适应
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }

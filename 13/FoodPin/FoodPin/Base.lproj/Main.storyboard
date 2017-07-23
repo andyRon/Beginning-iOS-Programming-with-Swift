@@ -28,33 +28,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-e2-SeS">
-                                            <rect key="frame" x="14" y="10" width="353" height="60"/>
+                                            <rect key="frame" x="14" y="10" width="353" height="75"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-b1-prt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-b1-prt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="9Sr-rX-RGA"/>
                                                         <constraint firstAttribute="height" constant="60" id="r9A-TQ-kDw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YFC-su-mUN">
-                                                    <rect key="frame" x="70" y="0.0" width="283" height="60"/>
+                                                    <rect key="frame" x="70" y="0.0" width="283" height="75"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0X-wc-KqC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="40"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0T-fw-Atv">
-                                                            <rect key="frame" x="0.0" y="26" width="283" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0T-fw-Atv">
+                                                            <rect key="frame" x="0.0" y="41" width="283" height="17"/>
                                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkL-sZ-ulp">
-                                                            <rect key="frame" x="0.0" y="44" width="283" height="16"/>
+                                                            <rect key="frame" x="0.0" y="59" width="283" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -65,10 +65,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EKw-e2-SeS" secondAttribute="bottom" constant="2" id="G0q-ax-7Xc"/>
                                         <constraint firstItem="EKw-e2-SeS" firstAttribute="leading" secondItem="Zh5-pA-zTh" secondAttribute="leadingMargin" constant="6" id="ThH-IH-Qbz"/>
                                         <constraint firstItem="EKw-e2-SeS" firstAttribute="top" secondItem="Zh5-pA-zTh" secondAttribute="topMargin" constant="2" id="gue-K7-fKd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="EKw-e2-SeS" secondAttribute="trailing" id="sAt-iV-gbt"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="EKw-e2-SeS" secondAttribute="bottom" constant="1.5" id="sbA-nL-eB5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -142,9 +142,9 @@
                                             <constraints>
                                                 <constraint firstItem="Il5-sX-My5" firstAttribute="centerY" secondItem="TsY-Ia-bEk" secondAttribute="centerY" id="DeU-2R-gvG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Il5-sX-My5" secondAttribute="trailing" id="Hw2-ih-ub4"/>
-                                                <constraint firstAttribute="bottom" secondItem="Il5-sX-My5" secondAttribute="bottom" constant="7" id="Tx4-L6-hks"/>
+                                                <constraint firstItem="Il5-sX-My5" firstAttribute="top" secondItem="TsY-Ia-bEk" secondAttribute="top" constant="7" id="Szk-lE-yed"/>
+                                                <constraint firstAttribute="bottom" secondItem="Il5-sX-My5" secondAttribute="bottom" constant="7" id="bwb-QB-9St"/>
                                                 <constraint firstItem="Il5-sX-My5" firstAttribute="leading" secondItem="TsY-Ia-bEk" secondAttribute="leadingMargin" id="drF-59-WtZ"/>
-                                                <constraint firstItem="Il5-sX-My5" firstAttribute="top" secondItem="TsY-Ia-bEk" secondAttribute="top" constant="7" id="vYo-QC-rwd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
