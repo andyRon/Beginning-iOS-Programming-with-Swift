@@ -1,5 +1,5 @@
 //
-//  AddRestaurantControllerTableViewController.swift
+//  AddRestaurantController.swift
 //  FoodPin
 //
 //  Created by andyron on 2017/7/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddRestaurantControllerTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var photoImageView: UIImageView!
     
@@ -80,8 +80,8 @@ class AddRestaurantControllerTableViewController: UITableViewController, UIImage
         } else {
             print(nameTextField.text, typeTextField.text, locationTextField.text, isVisited)
             
-//            dismiss(animated: true, completion: nil)
-            performSegue(withIdentifier: "unwindToHomeScreen", sender: self)
+            dismiss(animated: true, completion: nil)
+//            performSegue(withIdentifier: "unwindToHomeScreen", sender: self)
         }
         
     }
