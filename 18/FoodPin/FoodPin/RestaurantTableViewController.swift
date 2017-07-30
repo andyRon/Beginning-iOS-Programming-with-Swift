@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
 
     var restaurants: [RestaurantMO] = []
     
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
     
     var searchController: UISearchController!
+    
+    var searchResults: [RestaurantMO] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.barTintColor = UIColor(red: 218.0/255.0, green:
+            100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
         
     }
     
@@ -66,8 +75,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
 
     
@@ -75,15 +87,16 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
                                                  for: indexPath) as! RestaurantTableViewCell
-        // Configure the cell...
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image as! Data)
+        
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
+        cell.nameLabel.text = restaurant.name
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image! as Data)
         cell.thumbnailImageView.layer.cornerRadius = 30.0
         cell.thumbnailImageView.clipsToBounds = true
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        
-        cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.accessoryType = restaurant.isVisited ? .checkmark: .none
         
         return cell
     }
@@ -95,54 +108,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
     // MARK: - UITableViewDelegate
-    // MARK: Managing Row Selections
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath:
-//        IndexPath) {
-//        // Create an option menu as an action sheet
-//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-//        // Add actions to the menu
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:
-//            nil)
-//        optionMenu.addAction(cancelAction)
-//
-//        // Add Call action
-//        let callActionHandler = { (action:UIAlertAction!) -> Void in
-//            let alertMessage = UIAlertController(title: "Service Unavailable", message:
-//                "Sorry, the call feature is not available yet. Please retry later.",
-//                                                 preferredStyle: .alert)
-//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler:
-//                nil))
-//            self.present(alertMessage, animated: true, completion: nil)
-//        }
-//        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)",
-//            style: .default, handler: callActionHandler)
-//        optionMenu.addAction(callAction)
-//        
-//        // Check-in action
-//        let cell = tableView.cellForRow(at: indexPath)
-//        if cell?.accessoryType == .checkmark {
-//            let checkInAction = UIAlertAction(title: "Undo Check in", style: .default, handler:
-//            {
-//                (action:UIAlertAction!) -> Void in
-//                cell?.accessoryType = .none
-//                self.restaurantIsVisited[indexPath.row] = false
-//            })
-//            optionMenu.addAction(checkInAction)
-//        } else {
-//            let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:
-//            {
-//                (action:UIAlertAction!) -> Void in
-//                cell?.accessoryType = .checkmark
-//                self.restaurantIsVisited[indexPath.row] = true
-//            })
-//            optionMenu.addAction(checkInAction)
-//        }
-//        
-//        // Display the menu
-//        present(optionMenu, animated: true, completion: nil)
-//        
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -159,9 +124,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {
             (action, indexPath) -> Void in
-            
-//            self.restaurants.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                 let context = appDelegate.persistentContainer.viewContext
@@ -180,12 +142,20 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         return [deleteAction,shareAction]
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     // 通过segue传递数据
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = searchController.isActive ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
@@ -229,6 +199,28 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.endUpdates()
     }
     
+    // MARK: - 搜索
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({
+        (restaurant) -> Bool in
+            
+            if let name = restaurant.name, let location = restaurant.location {
+                let isMatchName = name.localizedCaseInsensitiveContains(searchText)
+                let isMatchLocation = location.localizedCaseInsensitiveContains(searchText)
+                if isMatchName || isMatchLocation {
+                    return true
+                }
+                
+            }
+            return false
+        })
+    }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
 
 }

@@ -17,6 +17,7 @@ class RestaurantDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         valueLabel.numberOfLines = 0
+        
     }
 
 }
