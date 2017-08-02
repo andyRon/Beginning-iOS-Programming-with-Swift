@@ -12,8 +12,8 @@ import SafariServices
 class AboutTableViewController: UITableViewController {
 
     var sectionTitles = ["Leave Feedback", "Follow Us"]
-    var sectionContent = [["Rate us on App Store", "Tell us your feedback"], ["Twitter", "Facebook", "Pinterest"]]
-    var links = ["http://www.jianshu.com/u/efce1a2a95ab", "http://andyron.com", "https://www.pinterest.com/appcoda/"]
+    var sectionContent = [["Rate us on App Store", "Tell us your feedback"], ["Jianshu", "Blog", "Github"]]
+    var links = ["http://www.jianshu.com/u/efce1a2a95ab", "http://andyron.com", "https://github.com/andyRon"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,7 @@ class AboutTableViewController: UITableViewController {
                 }
             } else if indexPath.row == 1 {
                 performSegue(withIdentifier: "showWebView", sender: self)
+    
             }
         case 1:
             if let url = URL(string: links[indexPath.row]) {

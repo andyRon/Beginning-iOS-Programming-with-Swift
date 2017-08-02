@@ -47,17 +47,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="About" id="I4n-BT-QbF"/>
                     <connections>
-                        <segue destination="trp-0x-rw5" kind="show" identifier="showWebView" id="HB1-O3-nyH"/>
+                        <segue destination="trp-0x-rw5" kind="show" identifier="showWebView" id="aas-da-DvG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOy-uf-pc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1239" y="2527"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="jrF-KR-ml8">
             <objects>
-                <viewController id="trp-0x-rw5" sceneMemberID="viewController">
+                <viewController id="trp-0x-rw5" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ji3-Kc-Ixc" customClass="WebViewController" customModule="FoodPin" customModuleProvider="target"/>
                         <viewControllerLayoutGuide type="bottom" id="UQl-nE-xFe"/>
