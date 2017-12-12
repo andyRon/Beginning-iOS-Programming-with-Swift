@@ -64,17 +64,17 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     // 滑动产生删除按钮
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            restaurantNames.remove(at: indexPath.row)
-            restaurantLocations.remove(at: indexPath.row)
-            restaurantTypes.remove(at: indexPath.row)
-            restaurantIsVisited.remove(at: indexPath.row)
-            restaurantImages.remove(at: indexPath.row)
-        }
-//        tableView.reloadData()
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            restaurantNames.remove(at: indexPath.row)
+//            restaurantLocations.remove(at: indexPath.row)
+//            restaurantTypes.remove(at: indexPath.row)
+//            restaurantIsVisited.remove(at: indexPath.row)
+//            restaurantImages.remove(at: indexPath.row)
+//        }
+////        tableView.reloadData()
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
     // MARK: - UITableViewDelegate
     // MARK: Managing Row Selections
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath:

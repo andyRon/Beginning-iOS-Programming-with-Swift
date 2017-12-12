@@ -91,56 +91,7 @@ class RestaurantTableViewController: UITableViewController {
         }
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
-    // MARK: - UITableViewDelegate
-    // MARK: Managing Row Selections
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath:
-//        IndexPath) {
-//        // Create an option menu as an action sheet
-//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-//        // Add actions to the menu
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:
-//            nil)
-//        optionMenu.addAction(cancelAction)
-//
-//        // Add Call action
-//        let callActionHandler = { (action:UIAlertAction!) -> Void in
-//            let alertMessage = UIAlertController(title: "Service Unavailable", message:
-//                "Sorry, the call feature is not available yet. Please retry later.",
-//                                                 preferredStyle: .alert)
-//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler:
-//                nil))
-//            self.present(alertMessage, animated: true, completion: nil)
-//        }
-//        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)",
-//            style: .default, handler: callActionHandler)
-//        optionMenu.addAction(callAction)
-//        
-//        // Check-in action
-//        let cell = tableView.cellForRow(at: indexPath)
-//        if cell?.accessoryType == .checkmark {
-//            let checkInAction = UIAlertAction(title: "Undo Check in", style: .default, handler:
-//            {
-//                (action:UIAlertAction!) -> Void in
-//                cell?.accessoryType = .none
-//                self.restaurantIsVisited[indexPath.row] = false
-//            })
-//            optionMenu.addAction(checkInAction)
-//        } else {
-//            let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:
-//            {
-//                (action:UIAlertAction!) -> Void in
-//                cell?.accessoryType = .checkmark
-//                self.restaurantIsVisited[indexPath.row] = true
-//            })
-//            optionMenu.addAction(checkInAction)
-//        }
-//        
-//        // Display the menu
-//        present(optionMenu, animated: true, completion: nil)
-//        
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
-    
+   
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: {

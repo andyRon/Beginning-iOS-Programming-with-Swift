@@ -141,7 +141,7 @@ UITableViewDelegate {
         }
     }
     
-    func showMap() {
+    @objc func showMap() {
         performSegue(withIdentifier: "showMap", sender: self)
     }
 }

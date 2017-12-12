@@ -45,7 +45,7 @@ UITableViewDelegate {
         geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
             placemarks, error in
             if error != nil {
-                print(error)
+                print(error as Any)
                 return
             }
             if let placemarks = placemarks {
@@ -141,7 +141,7 @@ UITableViewDelegate {
         }
     }
     
-    func showMap() {
+    @objc func showMap() {
         performSegue(withIdentifier: "showMap", sender: self)
     }
 }
