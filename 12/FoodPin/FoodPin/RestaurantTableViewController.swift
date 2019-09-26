@@ -41,7 +41,6 @@ class RestaurantTableViewController: UITableViewController {
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-//        navigationController?.hidesBarsOnSwipe = true
         
     }
     

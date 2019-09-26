@@ -124,7 +124,7 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
-    
+    // 滑动代理方法
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: {

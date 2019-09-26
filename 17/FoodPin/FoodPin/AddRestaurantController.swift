@@ -95,7 +95,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                 
                 if let restaurantImage = photoImageView.image {
                     if let imageData = UIImagePNGRepresentation(restaurantImage) {
-                        restaurant.image = NSData(data: imageData)
+                      restaurant.image = NSData(data: imageData) as Data
                     }
                 }
                 

@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF1CD5ED1F13028A000E8EFD /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1CD5ED1F13028A000E8EFD /* FoodPin-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FoodPin-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1CD5F01F13028A000E8EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1CD5F51F13028A000E8EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF1CD5F71F13028A000E8EFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		EF1CD5EE1F13028A000E8EFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF1CD5ED1F13028A000E8EFD /* FoodPin.app */,
+				EF1CD5ED1F13028A000E8EFD /* FoodPin-8.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			);
 			name = FoodPin;
 			productName = FoodPin;
-			productReference = EF1CD5ED1F13028A000E8EFD /* FoodPin.app */;
+			productReference = EF1CD5ED1F13028A000E8EFD /* FoodPin-8.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,6 +109,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -268,9 +269,9 @@
 				DEVELOPMENT_TEAM = ZHNA975N38;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.andyron.FoodPin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.andyron.FoodPin-8";
+				PRODUCT_NAME = "FoodPin-8";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -281,9 +282,9 @@
 				DEVELOPMENT_TEAM = ZHNA975N38;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.andyron.FoodPin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.andyron.FoodPin-8";
+				PRODUCT_NAME = "FoodPin-8";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -306,6 +307,7 @@
 				EF1CD6011F13028A000E8EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
